@@ -63,15 +63,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				chat: {
-					'light-bg': '#F0F0F0', // Updated to grayscale
-					'message-sent': '#222222', // Dark gray for sent messages
-					'message-received': '#FFFFFF', // White for received messages
-					'blue': '#000000', // Black replaces blue
-					'light-blue': '#333333', // Dark gray replaces light blue
-					'gray': '#666666',
-					'light-gray': '#F5F5F5',
+					'light-bg': '#FFFFFF', // White background
+					'message-sent': '#333333', // Dark gray for sent messages
+					'message-received': '#F5F5F5', // Light gray for received messages
+					'blue': '#555555', // Medium gray replaces black
+					'light-blue': '#888888', // Light gray replaces dark gray
+					'gray': '#AAAAAA', // Medium gray
+					'light-gray': '#F0F0F0', // Very light gray
 					'text-light': '#FFFFFF', // White text for dark backgrounds
-					'text-dark': '#000000', // Black text for light backgrounds
+					'text-dark': '#333333', // Dark gray text for light backgrounds
 				}
 			},
 			borderRadius: {

@@ -28,10 +28,10 @@ export const ChatList: React.FC<ChatListProps> = ({
   
   return (
     <div className={cn(
-      "flex flex-col h-full bg-black border-r border-gray-800",
+      "flex flex-col h-full bg-white border-r border-gray-300",
       isMobile && selectedContactId ? "hidden" : "flex"
     )}>
-      <div className="p-4 bg-black text-white border-b border-gray-800">
+      <div className="p-4 bg-white text-gray-800 border-b border-gray-300">
         <h1 className="text-xl font-semibold">Messages</h1>
       </div>
       
@@ -40,7 +40,7 @@ export const ChatList: React.FC<ChatListProps> = ({
           <input
             type="text"
             placeholder="Search contacts..."
-            className="w-full p-2 pl-8 rounded-md border border-gray-700 bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-white"
+            className="w-full p-2 pl-8 rounded-md border border-gray-300 bg-gray-100 text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +64,8 @@ export const ChatList: React.FC<ChatListProps> = ({
           <div
             key={contact.id}
             className={cn(
-              "flex items-center p-3 cursor-pointer hover:bg-gray-900 transition-colors border-b border-gray-800",
-              selectedContactId === contact.id && "bg-gray-800"
+              "flex items-center p-3 cursor-pointer hover:bg-gray-100 transition-colors border-b border-gray-200",
+              selectedContactId === contact.id && "bg-gray-200"
             )}
             onClick={() => onSelectContact(contact.id)}
           >
@@ -77,25 +77,25 @@ export const ChatList: React.FC<ChatListProps> = ({
               />
               <span
                 className={cn(
-                  "absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-black",
-                  contact.status === "online" ? "bg-white" : "bg-gray-600"
+                  "absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white",
+                  contact.status === "online" ? "bg-gray-800" : "bg-gray-400"
                 )}
               />
             </div>
             
             <div className="flex-1 ml-3">
               <div className="flex justify-between items-center">
-                <h2 className="font-semibold text-white">{contact.name}</h2>
-                <span className="text-xs text-gray-400">{contact.lastMessageTime}</span>
+                <h2 className="font-semibold text-gray-800">{contact.name}</h2>
+                <span className="text-xs text-gray-500">{contact.lastMessageTime}</span>
               </div>
               
               <div className="flex justify-between items-center">
-                <p className="text-sm text-gray-400 truncate max-w-[150px]">
+                <p className="text-sm text-gray-600 truncate max-w-[150px]">
                   {contact.lastMessage}
                 </p>
                 
                 {contact.unreadCount && contact.unreadCount > 0 && (
-                  <span className="bg-white text-black text-xs px-2 py-0.5 rounded-full">
+                  <span className="bg-gray-800 text-white text-xs px-2 py-0.5 rounded-full">
                     {contact.unreadCount}
                   </span>
                 )}

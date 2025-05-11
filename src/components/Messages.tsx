@@ -42,11 +42,11 @@ export const Messages: React.FC<MessagesProps> = ({
 
   if (!contact) {
     return (
-      <div className="flex-1 flex items-center justify-center bg-gray-900">
-        <div className="text-center text-gray-400">
+      <div className="flex-1 flex items-center justify-center bg-gray-50">
+        <div className="text-center text-gray-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-16 w-16 mx-auto text-gray-500 mb-4"
+            className="h-16 w-16 mx-auto text-gray-400 mb-4"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -66,11 +66,11 @@ export const Messages: React.FC<MessagesProps> = ({
 
   return (
     <div className="flex-1 flex flex-col">
-      <div className="p-3 flex items-center bg-black border-b border-gray-800">
+      <div className="p-3 flex items-center bg-white border-b border-gray-300">
         {isMobile && (
           <button 
             onClick={onBackClick} 
-            className="mr-2 text-gray-400"
+            className="mr-2 text-gray-500"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -94,22 +94,22 @@ export const Messages: React.FC<MessagesProps> = ({
           className="w-10 h-10 rounded-full object-cover"
         />
         <div className="ml-3">
-          <h2 className="font-semibold text-white">{contact.name}</h2>
+          <h2 className="font-semibold text-gray-800">{contact.name}</h2>
           <div className="flex items-center text-sm">
             <span
               className={cn(
                 "h-2 w-2 rounded-full mr-1",
-                contact.status === "online" ? "bg-white" : "bg-gray-600"
+                contact.status === "online" ? "bg-gray-800" : "bg-gray-400"
               )}
             />
-            <span className="text-gray-400">
+            <span className="text-gray-500">
               {contact.status === "online" ? "Online" : "Offline"}
             </span>
           </div>
         </div>
       </div>
 
-      <div className="flex-1 p-4 overflow-y-auto bg-gray-900">
+      <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
         <div className="space-y-3">
           {messages.map((message) => (
             <div
@@ -124,7 +124,7 @@ export const Messages: React.FC<MessagesProps> = ({
                   "max-w-[75%] p-3 rounded-lg animate-slide-in",
                   message.sender === "user"
                     ? "bg-chat-message-sent text-chat-text-light"
-                    : "bg-chat-message-received text-chat-text-dark border border-gray-800"
+                    : "bg-chat-message-received text-chat-text-dark border border-gray-200"
                 )}
               >
                 <p className="break-words">{message.content}</p>
@@ -134,7 +134,7 @@ export const Messages: React.FC<MessagesProps> = ({
                     message.sender === "user" ? "justify-end" : "justify-start"
                   )}
                 >
-                  <span className={message.sender === "user" ? "text-gray-300" : "text-gray-600"}>
+                  <span className={message.sender === "user" ? "text-gray-300" : "text-gray-500"}>
                     {message.timestamp}
                   </span>
                   {message.sender === "user" && (
@@ -155,7 +155,7 @@ export const Messages: React.FC<MessagesProps> = ({
                       ) : (
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-4 w-4 text-gray-500"
+                          className="h-4 w-4 text-gray-400"
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
