@@ -214,9 +214,9 @@ export const ChatPage: React.FC = () => {
     : null;
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex h-screen bg-black text-white">
       {/* Left sidebar - ChatList */}
-      <div className={`${isMobile ? 'w-full' : 'w-1/3'} border-r border-gray-200`}>
+      <div className={`${isMobile ? 'w-full' : 'w-1/3'} border-r border-gray-800`}>
         <ChatList
           contacts={mockContacts}
           selectedContactId={selectedContactId}

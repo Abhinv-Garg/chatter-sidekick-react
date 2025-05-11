@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -64,13 +63,15 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				chat: {
-					'light-bg': '#F0F4F9',
-					'message-sent': '#DCF8C6',
-					'message-received': '#FFFFFF',
-					'blue': '#3B82F6',
-					'light-blue': '#60A5FA',
-					'gray': '#9CA3AF',
-					'light-gray': '#F3F4F6',
+					'light-bg': '#F0F0F0', // Updated to grayscale
+					'message-sent': '#222222', // Dark gray for sent messages
+					'message-received': '#FFFFFF', // White for received messages
+					'blue': '#000000', // Black replaces blue
+					'light-blue': '#333333', // Dark gray replaces light blue
+					'gray': '#666666',
+					'light-gray': '#F5F5F5',
+					'text-light': '#FFFFFF', // White text for dark backgrounds
+					'text-dark': '#000000', // Black text for light backgrounds
 				}
 			},
 			borderRadius: {
